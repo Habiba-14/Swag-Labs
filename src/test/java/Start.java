@@ -9,13 +9,14 @@ public class Start {
     WebDriver driver;
     @BeforeTest
     public void LaunchWebsite(){
-        WebDriverManager manager = new ChromeDriverManager();
+        WebDriverManager.chromedriver().setup();
+        //WebDriverManager manager = new ChromeDriverManager();
         driver = new ChromeDriver();
         driver.get("https://www.saucedemo.com/");
-
     }
         @AfterTest
     public void Close(){
         driver.quit();
         }
+
 }
